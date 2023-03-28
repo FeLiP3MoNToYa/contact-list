@@ -45,10 +45,41 @@ function Agregar(Id,Nombre,Apellidos,Telefono,Cuidad,Direccion){
     }
     ListaContactos.push(contacto);
 }
-function borrarContactoID(id){
+function BorrarID(Id){
     for(let i = 0; i < ListaContactos.length;i++){
         if (ListaContactos[i].id === id) {
             ListaContactos.splice(i,1);
         }
+    }
+}
+
+function BorrarNombre(Nombre){
+    for (let i = 0; i < ListaContactos.length; i++) {
+        if (ListaContactos[i].nombre === nombre) {
+            ListaContactos.splice(i,1);
+        }
+    }
+}
+
+function ActualizarID(Id, NuevoNombres, NuevosApellido, NuevoTelefono, NuevaCiudad, NuevaDireccion){
+    for (let i = 0; i < listaContactos.length; i++) {
+        if (listaContactos[i].id === id) {
+            listaContactos[i] = {
+                id,
+                Nombres: NuevosNombres,
+                Apellidos: NuevosApellidos,
+                Telefono: NuevoTelefono,
+                Ubicaciones: {
+                    Ciudad: NuevaCiudad,
+                    Direccion: NuevaDireccion
+                }
+            }
+        }
+    }
+}
+
+function Mostrar(){
+    for(const contacto of listaContactos){
+        console.log(contacto)
     }
 }
